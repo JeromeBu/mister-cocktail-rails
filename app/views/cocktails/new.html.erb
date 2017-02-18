@@ -1,0 +1,18 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <h3>New cocktail</h3>
+
+      <%= simple_form_for [@cocktail] do |f| %>
+        <%= f.input :name %>
+        <%= f.submit "Add a cocktail", class: "btn btn-primary" %>
+      <% end %>
+
+      <p><%= link_to "Back to all cocktails", cocktails_path %></p>
+
+    </div>
+  </div>
+</div>
+
