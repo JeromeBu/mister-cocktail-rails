@@ -1,10 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-
-      <h3>Adding a dose to <%= @cocktail.name %></h3>
-
-      <%= simple_form_for [@cocktail, @dose] do |f| %>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.error_notification %>
         <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
         <%= f.input :description, as: :text %>
@@ -12,8 +6,3 @@
       <% end %>
 
       <p><%= link_to "Back to all cocktails", cocktails_path %></p>
-
-    </div>
-  </div>
-</div>
-

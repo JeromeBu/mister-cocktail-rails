@@ -17,7 +17,23 @@ ingredients_array.each do |ingredient|
   Ingredient.create!(name: ingredient_string)
 end
 
-Cocktail.create!(name: "Mojito")
-Cocktail.create!(name: "Bloody Marry")
+mojito = Cocktail.create!(name: "Mojito")
+bloody_marry = Cocktail.create!(name: "Bloody Marry")
+caipirinha = Cocktail.create!(name: "Caipirinha")
+Cocktail.create!(name: "Margarita")
+Cocktail.create!(name: "Martini")
+Cocktail.create!(name: "Piña Colada")
+
+Dose.create!(cocktail: mojito, ingredient: Ingredient.find_by(name: "Rum"), description: "6 cl")
+Dose.create!(cocktail: mojito, ingredient: Ingredient.find_by(name: "Lemon"), description: "Juice of 2")
+Dose.create!(cocktail: mojito, ingredient: Ingredient.find_by(name: "Mint"), description: "A full hand of fresh")
+
+Dose.create!(cocktail: caipirinha, ingredient: Ingredient.find_by(name: "Cachaca"), description: "6 cl")
+Dose.create!(cocktail: caipirinha, ingredient: Ingredient.find_by(name: "Lemon"), description: "Juice of 2")
+Dose.create!(cocktail: caipirinha, ingredient: Ingredient.find_by(name: "Mint"), description: "A full hand of fresh")
+
+Dose.create!(cocktail: bloody_marry, ingredient: Ingredient.find_by(name: "Tomato juice"), description: "Half a glass")
+
 
 puts "---------------  Seeded with success ^_^ -----------------"
+

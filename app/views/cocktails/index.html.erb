@@ -1,6 +1,5 @@
-<h3>Here is the list of all cocktails</h3>
-
-<p><%= link_to "Add a new Cocktail", new_cocktail_path %></p>
+<h3>Welcome to mister cocktail !</h3>
+<h4>Here is the list of all our cocktails</h4>
 
 <ul>
 <% @cocktails.each do |cocktail| %>
@@ -8,3 +7,6 @@
 <% end %>
 </ul>
 
+<hr>
+
+<p><%= link_to "I want to add a new Cocktail", new_cocktail_path, class: "btn, btn-primary"  %></p>
