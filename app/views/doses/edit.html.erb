@@ -7,7 +7,7 @@
       <%= simple_form_for [@dose] do |f| %>
         <%= f.error_notification %>
         <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
-        <%= f.input :description, as: :text %>
+        <%= f.input :description %>
         <%= f.submit "Add this does to #{@cocktail.name}", class: "btn btn-primary" %>
       <% end %>
 

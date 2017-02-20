@@ -1,0 +1,8 @@
+<li><%= link_to dose_path(dose), method: :delete do %>
+  <i class="fa fa-trash-o" aria-hidden="true"></i>
+  <% end %>
+   - <%= link_to edit_dose_path(dose) do %>
+  <i class="fa fa-pencil" aria-hidden="true"></i>
+  <% end %>
+  - <%= dose.ingredient.name %> : <%= dose.description %>
+</li>

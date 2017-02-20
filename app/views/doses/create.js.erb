@@ -1,0 +1,17 @@
+// app/views/reviews/create.js.erb
+// Here you will write *javascript* that would be executed by the browser
+console.log("marche ?")
+<% if @dose.errors.any? %>
+  // Render new review form with errorsgst
+  $('#new_dose').html("<%= j render 'doses/form', cocktail: @cocktail, dose: @dose %>");
+  console.log("maybe ?")
+<% else %>
+  // Create a paragraph for the new review. But hide it.
+  var new_dose = $("<%= j render 'dose/show', dose: @dose %>").hide();
+  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+  $('#doses').append(new_dose);
+  // Show the new review with an animation!
+  new_dose.slideDown();
+  // Reset the form
+  $('#new_dose').html("<%= j render 'doses/form', cocktail: @cocktail, dose: Dose.new %>");
+<% end %>

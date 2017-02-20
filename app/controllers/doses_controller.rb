@@ -6,11 +6,28 @@ class DosesController < ApplicationController
   def create
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
+
+    # Test ajaxify
+
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
+      respond_to do |format|
+        format.html { redirect_to cocktail_path(@cocktail) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render 'cocktails/show'
+      respond_to do |format|
+        format.html { render 'cocktails/show' }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     end
+
+    # ligne to put back if not working:
+
+    # if @dose.save
+    #   redirect_to cocktail_path(@cocktail)
+    # else
+    #   render 'cocktails/show'
+    # end
   end
 
   def edit
