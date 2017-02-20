@@ -9,6 +9,34 @@ body {
   background-repeat: no-repeat;
 }
 
+.content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+
+.cocktail {
+   flex: 0 0 400px;
+}
+
+.cocktail-card {
+  height: 200px ;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+a.cocktail {
+  padding: 1px;
+  border-radius: 3px;
+}
+
+a.cocktail:hover {
+  opacity: 0.8;
+}
 a {
   padding: 10px;
   border-radius: 3px;

@@ -1,14 +1,16 @@
 <h3>Welcome to mister cocktail !</h3>
 <h4>Here is the list of all our cocktails</h4>
+<div class="content">
+  <% @cocktails.each do |cocktail|%>
+    <%= link_to cocktail_path(cocktail), class: "cocktail" do %>
+      <div class="cocktail-card"
+        style="background-image: url('http://res.cloudinary.com/dpmc03d5t/image/upload/v1487582980/Martini_yzsciz.jpg')">
+        <%= cocktail.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
-<% @cocktails.each do |cocktail| %>
-  <div class="cocktail-card"
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_tag("Mojito_bogdir.jpg",
-      width: 400, height: 300, crop: :fill) %>')"> - test
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-  </div>
-<% end %>
 
 <br>
 <br>
