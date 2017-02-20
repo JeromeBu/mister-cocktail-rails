@@ -1,12 +1,16 @@
 <h3>Welcome to mister cocktail !</h3>
 <h4>Here is the list of all our cocktails</h4>
 
-<ul>
 <% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+  <div class="cocktail-card"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_tag("Mojito_bogdir.jpg",
+      width: 400, height: 300, crop: :fill) %>')"> - test
+    <%= link_to cocktail.name, cocktail_path(cocktail) %>
+  </div>
 <% end %>
-</ul>
 
-<hr>
-
+<br>
+<br>
+<br>
 <p><%= link_to "I want to add a new Cocktail", new_cocktail_path, class: "btn, btn-primary"  %></p>

@@ -2,6 +2,13 @@
 @import "footer";
 @import "navbar";
 
+
+body {
+  background-image:  url("http://res.cloudinary.com/dpmc03d5t/image/upload/b_rgb:abccf4,bo_1px_solid_rgb:000,e_gradient_fade:20,o_94,q_69/v1487519095/plage_palmiers_gilebi.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 a {
   padding: 10px;
   border-radius: 3px;
@@ -11,3 +18,7 @@ a:hover {
   text-decoration: none;
 
 }
+
+// .cocktail-card {
+//   background-image: cover;
+// }
